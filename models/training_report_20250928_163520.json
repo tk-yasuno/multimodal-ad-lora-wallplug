@@ -1,0 +1,28 @@
+{
+  "session_id": "20250928_163520",
+  "start_time": "2025-09-28T16:35:20.276841",
+  "anomaly_detection": {
+    "status": "failed",
+    "error": "Traceback (most recent call last):\n  File \"C:\\Users\\yasun\\MAD-FH\\train_minicpm_wallplugs.py\", line 476, in <module>\n    main()\n  File \"C:\\Users\\yasun\\MAD-FH\\train_minicpm_wallplugs.py\", line 446, in main\n    print(\"\\U0001f680 MVTec AD Wallplugs × MiniCPM 異常検知学習\")\nUnicodeEncodeError: 'cp932' codec can't encode character '\\U0001f680' in position 0: illegal multibyte sequence\n",
+    "output": ""
+  },
+  "lora_explanation": {
+    "status": "failed",
+    "error": "Traceback (most recent call last):\n  File \"C:\\Users\\yasun\\MAD-FH\\train_lora_wallplugs.py\", line 510, in <module>\n    main()\n  File \"C:\\Users\\yasun\\MAD-FH\\train_lora_wallplugs.py\", line 474, in main\n    print(\"\\U0001f680 MVTec AD Wallplugs × LoRA 説明生成学習\")\nUnicodeEncodeError: 'cp932' codec can't encode character '\\U0001f680' in position 0: illegal multibyte sequence\n",
+    "output": ""
+  },
+  "integration_test": {
+    "status": "warning",
+    "test_time": 0.094827,
+    "error": "Traceback (most recent call last):\n  File \"C:\\Users\\yasun\\MAD-FH\\test_wallplugs_fodd.py\", line 186, in <module>\n    test_fodd_with_wallplugs()\n  File \"C:\\Users\\yasun\\MAD-FH\\test_wallplugs_fodd.py\", line 19, in test_fodd_with_wallplugs\n    print(\"\\U0001f680 MVTec AD Wallplugs × FODD パイプライン テスト\")\nUnicodeEncodeError: 'cp932' codec can't encode character '\\U0001f680' in position 0: illegal multibyte sequence\n",
+    "output": ""
+  },
+  "summary": {
+    "overall_status": "failed",
+    "anomaly_detection_success": false,
+    "lora_explanation_success": false,
+    "integration_test_ok": true,
+    "total_training_time": 0,
+    "end_time": "2025-09-28T16:36:38.249347"
+  }
+}

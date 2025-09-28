@@ -1,0 +1,30 @@
+{
+  "session_id": "20250928_164249",
+  "start_time": "2025-09-28T16:42:49.351168",
+  "anomaly_detection": {
+    "status": "success",
+    "training_time": 69.088466,
+    "output": " - wallplugs_trainer - INFO - Model setup complete:\n2025-09-28 16:43:10,426 - wallplugs_trainer - INFO -   Total parameters: 67,170,604\n2025-09-28 16:43:10,427 - wallplugs_trainer - INFO -   Trainable parameters: 67,170,604\n2025-09-28 16:43:10,427 - wallplugs_trainer - INFO -   Device: cuda\n2025-09-28 16:43:10,427 - wallplugs_trainer - INFO -   MiniCPM enabled: True\n2025-09-28 16:43:10,427 - wallplugs_trainer - INFO - Optimizer setup complete:\n2025-09-28 16:43:10,427 - wallplugs_trainer - INFO -   LR: 0.0001\n2025-09-28 16:43:10,427 - wallplugs_trainer - INFO -   Weight decay: 1e-05\n2025-09-28 16:43:10,458 - wallplugs_trainer - INFO - ============================================================\n2025-09-28 16:43:10,458 - wallplugs_trainer - INFO - \nEpoch 1/50\n2025-09-28 16:43:10,458 - wallplugs_trainer - INFO - ------------------------------\n\nTraining failed: invalid index of a 0-dim tensor. Use `tensor.item()` in Python or `tensor.item<T>()` in C++ to convert a 0-dim tensor to a number\n",
+    "model_path": "models/minicpm_autoencoder_wallplugs_best.pth"
+  },
+  "lora_explanation": {
+    "status": "success",
+    "training_time": 18.378168,
+    "output": "MVTec AD Wallplugs x LoRA 説明生成学習\n============================================================\nTraining Configuration:\n{\n  \"model\": {\n    \"name\": \"Salesforce/blip-image-captioning-base\"\n  },\n  \"lora\": {\n    \"r\": 16,\n    \"alpha\": 32,\n    \"dropout\": 0.1,\n    \"target_modules\": [\n      \"q_proj\",\n      \"v_proj\"\n    ]\n  },\n  \"training\": {\n    \"epochs\": 10,\n    \"batch_size\": 2,\n    \"learning_rate\": 5e-05,\n    \"weight_decay\": 0.01,\n    \"warmup_steps\": 100\n  }\n}\n\nGPU: NVIDIA GeForce RTX 4060 Ti\n   Memory: 17.2GB\n2025-09-28 16:44:17,762 - wallplugs_lora_trainer - INFO - Loading model: Salesforce/blip-image-captioning-base\n\nLoRA training failed: Target modules {'q_proj', 'v_proj'} not found in the base model. Please check the target modules and try again.\n",
+    "model_path": "models/lora_wallplugs/final_model"
+  },
+  "integration_test": {
+    "status": "warning",
+    "test_time": 0.100834,
+    "error": "Traceback (most recent call last):\n  File \"C:\\Users\\yasun\\MAD-FH\\test_wallplugs_fodd.py\", line 186, in <module>\n    test_fodd_with_wallplugs()\n  File \"C:\\Users\\yasun\\MAD-FH\\test_wallplugs_fodd.py\", line 19, in test_fodd_with_wallplugs\n    print(\"\\U0001f680 MVTec AD Wallplugs × FODD パイプライン テスト\")\nUnicodeEncodeError: 'cp932' codec can't encode character '\\U0001f680' in position 0: illegal multibyte sequence\n",
+    "output": ""
+  },
+  "summary": {
+    "overall_status": "success",
+    "anomaly_detection_success": true,
+    "lora_explanation_success": true,
+    "integration_test_ok": true,
+    "total_training_time": 87.466634,
+    "end_time": "2025-09-28T16:44:24.740879"
+  }
+}

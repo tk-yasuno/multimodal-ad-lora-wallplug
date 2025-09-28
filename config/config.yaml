@@ -1,0 +1,144 @@
+# MAD-FH Configuration File
+
+# データ設定
+data:
+  # 画像データパス
+  raw_images_path: "data/images/normal"
+  processed_images_path: "data/processed_images"
+  metadata_db_path: "data/metadata/image_metadata.db"
+  
+  # 画像前処理設定
+  preprocessing:
+    target_size: [512, 512]
+    normalize_mean: [0.485, 0.456, 0.406]  # ImageNet標準
+    normalize_std: [0.229, 0.224, 0.225]   # ImageNet標準
+    
+  # サンプリング設定
+  sampling:
+    initial_sample_size: 200
+    random_seed: 42
+
+# モデル設定
+models:
+  # Autoencoder設定
+  autoencoder:
+    architecture: "conv"
+    input_channels: 3
+    latent_dim: 256
+    learning_rate: 0.001
+    batch_size: 16
+    epochs: 50
+    
+  # SimCLR設定
+  simclr:
+    backbone: "resnet50"
+    projection_dim: 128
+    temperature: 0.1
+    learning_rate: 0.001
+    batch_size: 32
+    epochs: 100
+
+# 学習設定
+training:
+  device: "cuda"  # cuda/cpu/auto
+  num_workers: 4
+  save_checkpoints: true
+  checkpoint_interval: 10
+  
+# 評価設定
+evaluation:
+  metrics: ["roc_auc", "pr_auc", "reconstruction_error"]
+
+# FODD (Full Online Data Description) 設定
+fodd:
+  # 異常検知設定
+  anomaly_detection:
+    threshold: 0.1
+    confidence_threshold: 0.8
+    
+  # 類似検索設定
+  similarity_search:
+    top_k: 5
+    similarity_threshold: 0.7
+    
+  # テキスト生成設定
+  text_generation:
+    max_length: 150
+    temperature: 0.7
+    do_sample: true
+    
+  # レポート設定
+  reporting:
+    output_dir: "data/reports"
+    include_feature_vectors: false
+    include_similar_cases: true
+    
+  # 通知設定
+  notification:
+    enabled: false
+    slack_webhook_url: ""
+    email_recipients: []
+    notification_threshold: 0.8  # この値以上の異常スコアで通知
+
+# LoRA テキスト生成設定
+text_generation:
+  # モデル設定
+  model_name: "Salesforce/blip-image-captioning-base"  # 正しいBLIPモデル名
+  model_path: "models/lora/text_generation"
+  
+  # LoRA設定
+  lora:
+    r: 8  # LoRAのランク（軽量化）
+    alpha: 16  # LoRAのスケーリング
+    dropout: 0.1
+    target_modules: ["text_decoder.bert.encoder.layer.0.attention.self.query", "text_decoder.bert.encoder.layer.0.attention.self.value", "text_decoder.bert.encoder.layer.0.crossattention.self.query", "text_decoder.bert.encoder.layer.0.crossattention.self.value"]  # BLIPテキストデコーダーの第0層のみ
+    
+  # 学習設定
+  training:
+    learning_rate: 2e-4
+    batch_size: 8
+    epochs: 10
+    warmup_steps: 100
+    max_length: 256
+    gradient_accumulation_steps: 4
+    
+  # 生成設定
+  generation:
+    max_new_tokens: 128
+    temperature: 0.7
+    top_p: 0.9
+    do_sample: true
+    
+  # データ設定
+  data:
+    feedback_db_path: "data/feedback/feedback.db"
+    training_dataset_path: "data/text_generation/training_data.jsonl"
+    validation_split: 0.2
+  threshold_percentile: 95  # 異常度閾値（正常データの上位5%）
+
+# Knowledge Base設定
+knowledge_base:
+  db_path: "data/knowledge_base"
+  vector_db:
+    dimension: 384
+    index_type: "IVF"  # IVF, HNSW, Flat
+  text_embedding:
+    model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  similarity_threshold: 0.7
+  max_search_results: 10
+  
+  # 特徴量抽出設定
+  feature_extraction:
+    min_confidence: 3.0
+    auto_update_interval: 24  # 時間
+    
+  # 推論支援設定
+  inference_support:
+    suggestion_count: 3
+    pattern_analysis: true
+  
+# ログ設定
+logging:
+  level: "INFO"
+  save_logs: true
+  log_dir: "logs"

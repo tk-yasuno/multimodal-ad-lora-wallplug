@@ -1,0 +1,30 @@
+{
+  "session_id": "20250928_165411",
+  "start_time": "2025-09-28T16:54:11.466516",
+  "anomaly_detection": {
+    "status": "success",
+    "training_time": 73.208242,
+    "output": " - wallplugs_trainer - INFO - Model setup complete:\n2025-09-28 16:54:33,648 - wallplugs_trainer - INFO -   Total parameters: 67,170,604\n2025-09-28 16:54:33,648 - wallplugs_trainer - INFO -   Trainable parameters: 67,170,604\n2025-09-28 16:54:33,648 - wallplugs_trainer - INFO -   Device: cuda\n2025-09-28 16:54:33,648 - wallplugs_trainer - INFO -   MiniCPM enabled: True\n2025-09-28 16:54:33,649 - wallplugs_trainer - INFO - Optimizer setup complete:\n2025-09-28 16:54:33,649 - wallplugs_trainer - INFO -   LR: 0.0001\n2025-09-28 16:54:33,649 - wallplugs_trainer - INFO -   Weight decay: 1e-05\n2025-09-28 16:54:33,651 - wallplugs_trainer - INFO - ============================================================\n2025-09-28 16:54:33,651 - wallplugs_trainer - INFO - \nEpoch 1/50\n2025-09-28 16:54:33,651 - wallplugs_trainer - INFO - ------------------------------\n\nTraining failed: invalid index of a 0-dim tensor. Use `tensor.item()` in Python or `tensor.item<T>()` in C++ to convert a 0-dim tensor to a number\n",
+    "model_path": "models/minicpm_autoencoder_wallplugs_best.pth"
+  },
+  "lora_explanation": {
+    "status": "success",
+    "training_time": 20.062487,
+    "output": "      \"fc2\"\n    ]\n  },\n  \"training\": {\n    \"epochs\": 10,\n    \"batch_size\": 2,\n    \"learning_rate\": 5e-05,\n    \"weight_decay\": 0.01,\n    \"warmup_steps\": 100\n  }\n}\n\nGPU: NVIDIA GeForce RTX 4060 Ti\n   Memory: 17.2GB\n2025-09-28 16:55:45,070 - wallplugs_lora_trainer - INFO - Loading model: Salesforce/blip-image-captioning-base\ntrainable params: 1,474,560 || all params: 225,446,204 || trainable%: 0.6541\n2025-09-28 16:55:51,066 - wallplugs_lora_trainer - INFO - Model setup complete\ntrain dataset: 112 samples\nvalidation dataset: 61 samples\n2025-09-28 16:55:51,076 - wallplugs_lora_trainer - INFO - Data setup complete:\n2025-09-28 16:55:51,076 - wallplugs_lora_trainer - INFO -   Train samples: 112\n2025-09-28 16:55:51,076 - wallplugs_lora_trainer - INFO -   Val samples: 61\n2025-09-28 16:55:51,080 - wallplugs_lora_trainer - INFO - ============================================================\n\nLoRA training failed: TrainingArguments.__init__() got an unexpected keyword argument 'evaluation_strategy'\n",
+    "model_path": "models/lora_wallplugs/final_model"
+  },
+  "integration_test": {
+    "status": "warning",
+    "test_time": 4.01039,
+    "error": "Traceback (most recent call last):\n  File \"C:\\Users\\yasun\\MAD-FH\\test_wallplugs_fodd.py\", line 44, in test_fodd_with_wallplugs\n    from fodd_pipeline import FODDPipeline\n  File \"C:\\Users\\yasun\\MAD-FH\\fodd_pipeline.py\", line 19, in <module>\n    import cv2\nModuleNotFoundError: No module named 'cv2'\nTraceback (most recent call last):\n  File \"C:\\Users\\yasun\\MAD-FH\\test_wallplugs_fodd.py\", line 189, in <module>\n    create_sample_analysis()\n  File \"C:\\Users\\yasun\\MAD-FH\\test_wallplugs_fodd.py\", line 164, in create_sample_analysis\n    print(\"\\n\\U0001f52c 個別サンプル分析例\")\nUnicodeEncodeError: 'cp932' codec can't encode character '\\U0001f52c' in position 2: illegal multibyte sequence\n",
+    "output": "MVTec AD Wallplugs x FODD パイプライン テスト\n[ERROR] テスト実行エラー: No module named 'cv2'\n"
+  },
+  "summary": {
+    "overall_status": "success",
+    "anomaly_detection_success": true,
+    "lora_explanation_success": true,
+    "integration_test_ok": true,
+    "total_training_time": 93.270729,
+    "end_time": "2025-09-28T16:55:56.782698"
+  }
+}

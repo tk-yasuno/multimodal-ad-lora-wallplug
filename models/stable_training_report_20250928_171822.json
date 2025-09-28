@@ -1,0 +1,31 @@
+{
+  "session_id": "20250928_171822",
+  "start_time": "2025-09-28T17:18:22.342305",
+  "lightweight_anomaly": {
+    "status": "failed",
+    "error": "Traceback (most recent call last):\n  File \"C:\\Users\\yasun\\MAD-FH\\demo_anomaly_wallplugs.py\", line 443, in <module>\n    main()\n  File \"C:\\Users\\yasun\\MAD-FH\\demo_anomaly_wallplugs.py\", line 415, in main\n    print(\"\\U0001f680 MVTec AD Wallplugs Lightweight Anomaly Detection\")\nUnicodeEncodeError: 'cp932' codec can't encode character '\\U0001f680' in position 0: illegal multibyte sequence\n",
+    "output": ""
+  },
+  "blip_explanation": {
+    "status": "warning",
+    "error": "Traceback (most recent call last):\n  File \"C:\\Users\\yasun\\MAD-FH\\demo_lora_wallplugs.py\", line 271, in <module>\n    main()\n  File \"C:\\Users\\yasun\\MAD-FH\\demo_lora_wallplugs.py\", line 253, in main\n    print(\"\\U0001f680 MVTec AD Wallplugs Simple LoRA Demo\")\nUnicodeEncodeError: 'cp932' codec can't encode character '\\U0001f680' in position 0: illegal multibyte sequence\n",
+    "output": ""
+  },
+  "integration_test": {
+    "status": "success",
+    "test_result": {
+      "anomaly_model": "available",
+      "model_path": "models\\lightweight_anomaly",
+      "status": "ready_for_deployment"
+    }
+  },
+  "summary": {
+    "overall_status": "failed",
+    "lightweight_anomaly_success": false,
+    "blip_explanation_ok": true,
+    "integration_test_ok": true,
+    "auc_score": "N/A",
+    "total_training_time": 0,
+    "end_time": "2025-09-28T17:18:33.021766"
+  }
+}

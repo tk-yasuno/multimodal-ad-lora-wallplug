@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-09-28T15:53:07.810610",
+  "processing_time": 0.135393,
+  "image_info": {
+    "path": "data\\processed\\wallplugs\\validation\\anomalous\\013_shift_3.png",
+    "metadata": {
+      "file_path": "data\\processed\\wallplugs\\validation\\anomalous\\013_shift_3.png",
+      "file_size": 647610,
+      "image_shape": [
+        1024,
+        1024,
+        3
+      ],
+      "processed_at": "2025-09-28T15:53:07.848063"
+    }
+  },
+  "anomaly_detection": {
+    "is_anomaly": false,
+    "anomaly_score": 0.0,
+    "threshold": 0.1
+  },
+  "similar_cases": [],
+  "generated_description": "正常画像: 異常スコア0.000（閾値以下）",
+  "feature_vector_shape": [
+    57
+  ],
+  "system_info": {
+    "fodd_version": "1.0.0",
+    "config_path": "config/config.yaml"
+  }
+}

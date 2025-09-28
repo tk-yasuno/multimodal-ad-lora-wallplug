@@ -1,0 +1,40 @@
+# Core dependencies for MAD-FH (Multimodal Anomaly Detector with Human Feedback)
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+pillow>=10.0.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tqdm>=4.65.0
+
+# Data management
+pandas>=2.0.0
+sqlite3  # Built-in with Python
+
+# Image processing and augmentation
+albumentations>=1.3.0
+imgaug>=0.4.0
+
+# Model evaluation
+scikit-image>=0.21.0
+
+# Configuration and utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+click>=8.1.0
+
+# Development and testing
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+jupyter>=1.0.0
+
+# Future dependencies (for later steps)
+# streamlit>=1.25.0
+# gradio>=3.40.0
+# fastapi>=0.100.0
+# uvicorn>=0.23.0
+# transformers>=4.30.0
+# faiss-cpu>=1.7.4
