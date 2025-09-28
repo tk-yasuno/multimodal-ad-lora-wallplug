@@ -329,15 +329,7 @@ We welcome pull requests and issue reports.
 3. [PEFT: Parameter-Efficient Fine-Tuning](https://github.com/huggingface/peft)
 4. [PyTorch Documentation](https://pytorch.org/docs/)
 
-## 👥 Authors
-
-- **Developer**: [Your Name]
-- **Project**: MVTec AD Anomaly Detection System
-- **Version**: v0.3 (Completed September 28, 2025)
-
----
-
-**🎉 v0.3 Achievement**: Complete 416-image dataset training, AUC 0.7175, production-ready anomaly detection system!
+**🎉 v0.3 Achievement**: (Completed September 28, 2025) Complete 416-image dataset training, AUC 0.7175, production-ready anomaly detection system!
 
 ## 📞 Support
 
